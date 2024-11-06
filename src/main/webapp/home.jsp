@@ -1,4 +1,5 @@
 <%@ page import="java.net.URLDecoder" %>
+<%@ page import="com.estore.model.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -40,6 +41,15 @@
     <h3>Hidden Form Field Data</h3>
    Name: <%=txtName %> <br> 
    Email: <%=txtEmail %>
+   
+   <h3>Http Session</h3>
+   
+   <%
+   User user = (User)session.getAttribute("keyUser");
+   %> 
+   Name: <%=user.name %> <br> 
+   Email: <%=user.email %> <br>
+   Password: <%=user.password %>
    
 </center>
 </body>

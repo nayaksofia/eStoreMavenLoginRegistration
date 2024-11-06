@@ -35,12 +35,17 @@ if (set != null && set.next()) {
     //Session tracking :URL Rewriting 
     // String res = "<a href='home.jsp?name=" + user.name + "&email= "+ user.email+ " '>Enter Home</a>";
     
+    //HttpSession Object
+    session.setAttribute("keyUser", user);
+    
     String res = "<form action='home.jsp' method='post'>"
      +"<input type='hidden' name='txtName' value='"+ user.name+"'/><br>" 
      +"<input type='hidden' name='txtEmail' value='"+ user.email+"'/><br>"
      +"<input type='submit' value='Enter Home'/><br>"
      +"</form>";
     
+     res = "<a href='home.jsp'>Enter Home</a>";
+     
     out.print(res);
 %>
 
