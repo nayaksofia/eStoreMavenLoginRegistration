@@ -26,13 +26,18 @@ if (set != null && set.next()) {
     // Set cookies
     Cookie cookie1 = new Cookie("keyName", URLEncoder.encode(user.name, "UTF-8"));
     Cookie cookie2 = new Cookie("keyEmail", URLEncoder.encode(user.email, "UTF-8"));
-
+   
+  
+    
     response.addCookie(cookie1);
     response.addCookie(cookie2);
+    
+    //Session tracking :URL Rewriting 
+    String res = "<a href='home.jsp?name=" + user.name + "&email= "+ user.email+ " '>Enter Home</a>";
+    out.print(res);
 %>
 
 <h3>Thank You For Logging In: <%= user.name %></h3>
-<a href='home.jsp'>Enter Home</a>
 
 <%
 } else {

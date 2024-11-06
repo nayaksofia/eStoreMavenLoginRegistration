@@ -16,13 +16,20 @@
     if (cookies != null) {
         for (Cookie cookie : cookies) {
             String name = URLDecoder.decode(cookie.getName(), "UTF-8");
-            String value = URLDecoder.decode(cookie.getValue(), "UTF-8");
+            String value = URLDecoder.decode(cookie.getValue(), "UTF-8");   
+            
    %>
             <%= name %> | <%= value %> <br>
    <%
         }
     }
+    
+    String name = request.getParameter("name");
+    String email = request.getParameter("email");
    %>
+   <br>
+   Name: <%=name %> <br> 
+   Email: <%=email %>
    
 </center>
 </body>
