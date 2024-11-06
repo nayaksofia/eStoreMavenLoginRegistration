@@ -26,10 +26,20 @@
     
     String name = request.getParameter("name");
     String email = request.getParameter("email");
+    
+    String txtName = request.getParameter("txtName");
+    String txtEmail = request.getParameter("txtEmail");
    %>
    <br>
+   
+   <h3>URL ReWritting!</h3>
    Name: <%=name %> <br> 
    Email: <%=email %>
+   
+   <br>
+    <h3>Hidden Form Field Data</h3>
+   Name: <%=txtName %> <br> 
+   Email: <%=txtEmail %>
    
 </center>
 </body>

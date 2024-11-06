@@ -33,7 +33,14 @@ if (set != null && set.next()) {
     response.addCookie(cookie2);
     
     //Session tracking :URL Rewriting 
-    String res = "<a href='home.jsp?name=" + user.name + "&email= "+ user.email+ " '>Enter Home</a>";
+    // String res = "<a href='home.jsp?name=" + user.name + "&email= "+ user.email+ " '>Enter Home</a>";
+    
+    String res = "<form action='home.jsp' method='post'>"
+     +"<input type='hidden' name='txtName' value='"+ user.name+"'/><br>" 
+     +"<input type='hidden' name='txtEmail' value='"+ user.email+"'/><br>"
+     +"<input type='submit' value='Enter Home'/><br>"
+     +"</form>";
+    
     out.print(res);
 %>
 
