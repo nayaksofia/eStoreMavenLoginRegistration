@@ -44,10 +44,14 @@ if (set != null && set.next()) {
      +"<input type='submit' value='Enter Home'/><br>"
      +"</form>";
     
-     res = "<a href='home.jsp'>Enter Home</a>";
+     //res = "<a href='home.jsp'>Enter Home</a>";
      
-    out.print(res);
+     //out.print(res);
 %>
+
+<jsp:forward page="welcome.jsp" >
+<jsp:param value="nayak.sofia" name="username"/>
+</jsp:forward>
 
 <h3>Thank You For Logging In: <%= user.name %></h3>
 
